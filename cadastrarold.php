@@ -2,13 +2,9 @@
 <script type="text/javascript" src="script.js"></script>   
 <meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-
-
 <!--echo '<meta http-equiv="refresh" content="2; url=http://mempreendimentos.com.br/megavisita">';-->
 
 <?php
-
-
 
 $nomeFuncionarioG = $_POST['funcionario'];
 $postoG = $_POST['posto'];
@@ -79,7 +75,7 @@ function cadastrar($nomeFuncionarioG,$postoG,$motivoG) {
       <input type='submit' value='Emitir Comprovante'>
     </form>
 
-    <a href='/'>Voltar</a>  
+   <!-- <a href='/'>Voltar</a> --> 
   </div>            
 
 
@@ -91,9 +87,10 @@ function cadastrar($nomeFuncionarioG,$postoG,$motivoG) {
 mysql_close();
 }
 
-function deletarRegistro($idFuncionario){
-  echo "chegou no deletar registro";
-  die();
+function excluir() {
+
+
+  $idFuncionario = $_POST['idFuncionario'];
 
   $sql = mysql_query("DELETE FROM protocolo WHERE id='$idFuncionario'");
 
@@ -105,54 +102,7 @@ function deletarRegistro($idFuncionario){
     echo "Falha ao cadastrar." . mysql_error();
   }
   mysql_close();
-
 }
-
-function excluir() {
-  $idFuncionario = $_POST['idFuncionario'];
-
-  ?>
-
-  <script>
-   validar();
-   function validar() {
-    var password = prompt('Digite a senha', '');
-   // var verificacao;
-
-   if (password == '12312310'){
-      //verificacao = 1;
-  
-    }
-
-    if(password != '12312310'){
-    window.alert('Senha Incorreta!');
-    //verificacao = 0;
-  }
-
-}
-
-
-</script>
-
-<?php
-
-}
-
-
-/*
- $validacao =  "<script>document.write(validar())</script>";
- 
- print($validacao);
- if ($validacao == "1") {
-  echo "ta aqui";
-   deletarRegistro($idFuncionario);
- }
- if ($validacao == "0") {
-  echo '<meta http-equiv="refresh" content="1; url=cadastrar.php">';
-}
-
-*/
-
 
 function gerarComprovante() {
 

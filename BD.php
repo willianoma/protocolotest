@@ -1,7 +1,7 @@
 ﻿<?php
-$banco = "mempr419_embraterbeta";
-$usuario = "mempr419_embrate";
-$senha = "123123123";
+$banco = "embraterbeta";
+$usuario = "root";
+$senha = "";
 $hostname = "localhost";
 $conn = mysql_connect($hostname, $usuario, $senha);
 
