@@ -1,5 +1,5 @@
 ﻿<?php
-$banco = "embraterbeta2";
+$banco = "embraterbetaaaa";
 $usuario = "root";
 $senha = "";
 $hostname = "localhost";
